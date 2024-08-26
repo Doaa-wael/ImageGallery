@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="t2.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1> Image Gallery</h1>
+    </div>
+    <div class="gallery-wrap">
+        <i id="left" class="fa-solid fa-arrow-left" ></i>
+    <div class="gallery">
+        <div >
+        <span><img src="images/image 1.jpg"></span>
+        <span><img src="images/image 2.jpg"></span>
+        <span><img src="images/image 3.jpg"></span>
+        <span><img src="images/image 4.jpg"></span>
+        </div>
+        <div>
+        <span><img src="images/image5.jpg"></span>
+        <span><img src="images/image6.jpg"></span>
+        <span><img src="images/image7.jpg"></span>
+        <span><img src="images/image9.jpg"></span>
+       </div>
+
+    </div>
+    <i id="right" class="fa-solid fa-arrow-right" ></i>
+    </div>
+    
+
+    <script>
+      
+       let scrollContainer = document.querySelector(".gallery");
+       let left = document.getElementById("left");
+       let right = document.getElementById("right");
+
+       scrollContainer.addEventListener("wheel",(evt) => {
+               evt.preventDefault();
+               scrollContainer.scrollLeft += evt.deltaY;
+               scrollContainer.style.scrollBehavior = "auto";
+
+       });
+
+       right.addEventListener("click" , ()=>{
+           scrollContainer.style.scrollBehavior = "smooth";
+           scrollContainer.scrollLeft += 900;
+       });
+
+       left.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft -=900;
+       });
+
+    </script>
+</body>
+</html>
